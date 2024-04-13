@@ -1,6 +1,7 @@
 import React from 'react'
 import contactImage from '../assets/contactImage.jpg'
 import { FaEnvelope, FaMapMarker, FaPhone } from 'react-icons/fa'
+import ShuffleText from 'react-shuffle-text';
 
 const Contact = () => {
   return (
@@ -9,8 +10,9 @@ const Contact = () => {
             <img src={contactImage} alt='' />
             <div className='about_overlay'></div>
             <div className='about_hero_text'>
-                <h1>Contact Us</h1>
-                <p>
+                <h1><ShuffleText content="Contact Us" /></h1>
+                <p data-aos="fade-up" data-aos-delay ="2000"
+     data-aos-duration="600">
                We'd love to hear from you. Please fill out this form.
                 </p>
             </div>

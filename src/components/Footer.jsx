@@ -1,5 +1,5 @@
 import React from 'react';
-import {FaFacebook, FaInstagram, FaTiktok, FaLinkedin, FaWhatsapp, FaTelegram } from 'react-icons/fa';
+import {FaFacebook, FaInstagram, FaTiktok, FaLinkedin, FaWhatsapp, FaTelegram, FaMapMarker, FaEnvelope, FaPhone } from 'react-icons/fa';
 import logo from '../assets/logo.png';
 import { Link } from 'react-router-dom';
 
@@ -17,10 +17,10 @@ const Footer = () => {
               </div>
             </div>
             <div className='footer_contact'>
-              <h3>Contact</h3>
-              <p>Addis Ababa, Ethiopia</p>
-              <p>info@dinkatourethiopia.com</p>
-              <p>251911558344</p>
+              <h3> Contact</h3>
+              <p><FaMapMarker /> Addis Ababa, Ethiopia</p>
+              <p><FaEnvelope /> info@dinkatourethiopia.com</p>
+              <p><FaPhone />251911558344</p>
             </div>
             <div className='footer_links'>
               <h3>Links</h3>

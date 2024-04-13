@@ -3,6 +3,7 @@ import aboutImage from '../assets/image_1.jpg'
 import { tourList } from '../assets/tours'
 import { FaCalendar, FaMapMarked, FaMapMarker, FaUsers } from 'react-icons/fa'
 import {useNavigate } from 'react-router-dom'
+import ShuffleText from 'react-shuffle-text';
 
 
 const ToursScreen = () => {
@@ -13,8 +14,9 @@ const ToursScreen = () => {
             <img src={aboutImage} alt='' />
             <div className='about_overlay'></div>
             <div className='about_hero_text'>
-                <h1>Tours</h1>
-                <p>
+                <h1><ShuffleText content="Tours" /></h1>
+                <p data-aos="fade-up" data-aos-delay ="2000"
+     data-aos-duration="600">
                 Discover the heart of Ethiopia with [Company Name], your trusted guide to unforgettable adventures in the land of origins.
                 </p>
             </div>

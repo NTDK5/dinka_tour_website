@@ -2,6 +2,7 @@ import React from 'react'
 import aboutImage from '../assets/image_1.jpg';
 import { destinationImage } from '../assets/image';
 import { Link } from 'react-router-dom';
+import ShuffleText from 'react-shuffle-text';
 
 const Destinations = () => {
     
@@ -11,8 +12,9 @@ const Destinations = () => {
             <img src={aboutImage} alt='' />
             <div className='about_overlay'></div>
             <div className='about_hero_text'>
-                <h1>Destinations</h1>
-                <p>
+                <h1><ShuffleText content="Destinations" /></h1>
+                <p data-aos="fade-up" data-aos-delay ="2000"
+     data-aos-duration="600">
                 Discover the heart of Ethiopia with [Company Name], your trusted guide to unforgettable adventures in the land of origins.
                 </p>
             </div>

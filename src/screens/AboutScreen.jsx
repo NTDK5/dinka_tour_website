@@ -5,6 +5,7 @@ import gallery2 from '../assets/gallery2.jpg';
 import gallery3 from '../assets/gallerry3.jpg';
 import { FaGem, FaGlobe, FaHiking, FaLandmark, FaMap, FaPrayingHands } from 'react-icons/fa';
 import ctaImage from '../assets/image 3.jpg';
+import ShuffleText from 'react-shuffle-text';
 
 
 const AboutScreen = () => {
@@ -14,8 +15,9 @@ const AboutScreen = () => {
             <img src={aboutImage} alt='' />
             <div className='about_overlay'></div>
             <div className='about_hero_text'>
-                <h1>About Us</h1>
-                <p>
+                <h1><ShuffleText content="About Us" /></h1>
+                <p data-aos="fade-up" data-aos-delay ="2000"
+     data-aos-duration="600">
                 Discover the heart of Ethiopia with [Company Name], your trusted guide to unforgettable adventures in the land of origins.
                 </p>
             </div>

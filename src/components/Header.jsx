@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, NavLink,} from "react-router-dom";
 import logo from '../assets/logo.png'
 import { useState, useEffect, useRef } from 'react';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaWindowClose } from 'react-icons/fa';
 
 const Header = ({isHome}) => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -42,9 +42,11 @@ const Header = ({isHome}) => {
     color: isHome ? (scrollPosition > window.innerHeight ? 'black' : 'white') : 'black',
   };
 
-  const toggleMobileMenu = () => {
+  const toggleMobileMenu = (event) => {
+    event.stopPropagation(); // Prevent the click event from bubbling up
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+  
   const menuRef = useRef(null);
   const linkRef = useRef(null)
 
@@ -71,9 +73,10 @@ const Header = ({isHome}) => {
             <img src={logo} alt="" height={30} className="logo" />
           </Link>
           {/* Hamburger menu icon */}
-          <div  className="hamburger_menu" style={hamburger_menu} onClick={toggleMobileMenu}>
-            <FaBars />
-          </div>
+          <div className="hamburger_menu" style={hamburger_menu} onClick={(event) => toggleMobileMenu(event)}>
+  {isMobileMenuOpen ? <FaWindowClose /> : <FaBars />}
+</div>
+
           {/* Menu items */}
           <div ref={linkRef}  className={`${isMobileMenuOpen ? 'open' : 'nav_link '}`}>
             <NavLink to={'/'} style={isMobileMenuOpen ? {} : navbarLinkStyle} activeClassName="active">

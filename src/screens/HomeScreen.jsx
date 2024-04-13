@@ -10,6 +10,7 @@ import {destinationImage} from '../assets/image';
 import { Link } from 'react-router-dom';
 import ctaImage from '../assets/image 3.jpg';
 import { useState } from 'react';
+import ShuffleText from 'react-shuffle-text';
 
 
 
@@ -39,19 +40,23 @@ const HomeScreen = () => {
           heroImage.map((image)=>
           (<SwiperSlide><div className='hero_slide'><img src={image} alt='hero' className='hero_images' /> <div className='overlay'></div></div></SwiperSlide>))
         }
-        <div className='hero_text'><h1>Discover the Untold Wonders of Ethiopia with Us</h1>
-        <button className='hero_button'>Explore Tours</button></div>
+        <div className='hero_text'><h1  data-aos="fade-up"
+              data-aos-duration="400">Discover the Untold Wonders of Ethiopia with Us</h1>
+        <button className='hero_button'  data-aos="fade-up"
+              data-aos-duration="600">Explore Tours</button></div>
       </Swiper>
       <div className='destination_section'>
         <div className='destination_content'>
-        <h1>Our Popular Destinations</h1>
+        <h1><ShuffleText content="Our Popular Destinations" /></h1>
         <p>The most popular destination presented to you</p>
       <div className='destination_list'>
 
 
 <div className='col_1'>
   <div className='row_1'>
-    <div className='bale'>
+    <div className='bale' data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
     <img src={baleMountains.imageUrl} alt='destination' className='destination_image' />
               <div className='destination_text'>
                 <h2>{baleMountains.link}</h2> 
@@ -63,7 +68,8 @@ const HomeScreen = () => {
     </div>
   </div>
   <div className='row_2'>
-    <div className='elm_1'>
+    <div className='elm_1' data-aos="fade-up"
+     data-aos-duration="600" >
     <img src={lalibela.imageUrl} alt='destination' className='destination_image' />
               <div className='destination_text'>
                 <h2>{lalibela.link}</h2> 
@@ -73,7 +79,8 @@ const HomeScreen = () => {
                 </Link>
               </div>
     </div>
-    <div className='elm_1'>
+    <div className='elm_1' data-aos="fade-up"
+     data-aos-duration="600">
     <img src={harar.imageUrl} alt='destination' className='destination_image' />
               <div className='destination_text'>
                 <h2>{harar.link}</h2> 
@@ -86,7 +93,9 @@ const HomeScreen = () => {
   </div>
 </div>
 <div className='col_2'>
-  <div className='elm_2'>
+  <div className='elm_2' data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
   <img src={omoValley.imageUrl} alt='destination' className='destination_image' />
               <div className='destination_text'>
                 <h2>{omoValley.link}</h2> 
@@ -108,7 +117,8 @@ const HomeScreen = () => {
           <p>Testimonials</p>
           <div className='testimonial_list'>
             { testimonials.map((testimonial) => (
-              <div className='testimonial_card'>
+              <div className='testimonial_card'  data-aos="fade-up"
+              data-aos-duration="600" >
                 <p>"{testimonial.testimonial}"</p>
                 <div className='testimonial_profile'>
                   <img src={testimonial.profileImg} />

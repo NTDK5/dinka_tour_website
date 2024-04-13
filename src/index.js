@@ -17,6 +17,7 @@ import DestinationDetail from './screens/DestinationDetail';
 import ToursDetail from './screens/ToursDetail';
 
 
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
