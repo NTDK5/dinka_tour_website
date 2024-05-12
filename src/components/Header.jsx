@@ -1,10 +1,10 @@
-import React from 'react'
-import { Link, NavLink,} from "react-router-dom";
-import logo from '../assets/logo.png'
-import { useState, useEffect, useRef } from 'react';
-import { FaBars, FaWindowClose } from 'react-icons/fa';
+import React from "react";
+import { Link, NavLink } from "react-router-dom";
+import logo from "../assets/logo.png";
+import { useState, useEffect, useRef } from "react";
+import { FaBars, FaWindowClose } from "react-icons/fa";
 
-const Header = ({isHome}) => {
+const Header = ({ isHome }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -14,41 +14,52 @@ const Header = ({isHome}) => {
       setScrollPosition(currentPosition);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
   const navbarStyle = {
-    fontFamily: 'Astonpoliz',
-    position: 'sticky',
+    fontFamily: "Astonpoliz",
+    position: "sticky",
     top: 0,
-    width: '100%',
-    height: '8vh',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center', // To push the menu items to the right
+    width: "100%",
+    height: "8vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center", // To push the menu items to the right
     zIndex: 10000,
-    backgroundColor: isHome ? (scrollPosition > window.innerHeight ? 'white' : 'transparent') : 'white',
-    transition: 'background-color 0.3s ease',
+    backgroundColor: isHome
+      ? scrollPosition > window.innerHeight
+        ? "white"
+        : "transparent"
+      : "white",
+    transition: "background-color 0.3s ease",
   };
-  const hamburger_menu ={
-    color:isHome ? (scrollPosition > window.innerHeight ? 'black' : 'white') : 'black',
-
-  }
+  const hamburger_menu = {
+    color: isHome
+      ? scrollPosition > window.innerHeight
+        ? "black"
+        : "white"
+      : "black",
+  };
 
   const navbarLinkStyle = {
-    color: isHome ? (scrollPosition > window.innerHeight ? 'black' : 'white') : 'black',
+    color: isHome
+      ? scrollPosition > window.innerHeight
+        ? "black"
+        : "white"
+      : "black",
   };
 
   const toggleMobileMenu = (event) => {
     event.stopPropagation(); // Prevent the click event from bubbling up
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-  
+
   const menuRef = useRef(null);
-  const linkRef = useRef(null)
+  const linkRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -58,47 +69,79 @@ const Header = ({isHome}) => {
     };
 
     // Add event listener to detect clicks outside the menu
-    document.addEventListener('click', handleClickOutside);
+    document.addEventListener("click", handleClickOutside);
 
     return () => {
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, []);
 
   return (
     <>
-    <nav style={navbarStyle}>
+      <nav style={navbarStyle}>
         <div className="nav" ref={menuRef}>
-          <Link to={'/'}>
+          <Link to={"/"}>
             <img src={logo} alt="" height={30} className="logo" />
           </Link>
           {/* Hamburger menu icon */}
-          <div className="hamburger_menu" style={hamburger_menu} onClick={(event) => toggleMobileMenu(event)}>
-  {isMobileMenuOpen ? <FaWindowClose /> : <FaBars />}
-</div>
+          <div
+            className="hamburger_menu"
+            style={hamburger_menu}
+            onClick={(event) => toggleMobileMenu(event)}
+          >
+            {isMobileMenuOpen ? <FaWindowClose /> : <FaBars />}
+          </div>
 
           {/* Menu items */}
-          <div ref={linkRef}  className={`${isMobileMenuOpen ? 'open' : 'nav_link '}`}>
-            <NavLink to={'/'} style={isMobileMenuOpen ? {} : navbarLinkStyle} activeClassName="active">
+          <div
+            ref={linkRef}
+            className={`${isMobileMenuOpen ? "open" : "nav_link "}`}
+          >
+            <NavLink
+              to={"/"}
+              style={isMobileMenuOpen ? {} : navbarLinkStyle}
+              activeClassName="active"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Home
             </NavLink>
-            <NavLink to={'/about'} style={isMobileMenuOpen ? {} : navbarLinkStyle} activeClassName="active">
+            <NavLink
+              to={"/about"}
+              style={isMobileMenuOpen ? {} : navbarLinkStyle}
+              activeClassName="active"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               About Us
             </NavLink>
-            <NavLink to={'/destinations'} style={isMobileMenuOpen ? {} : navbarLinkStyle} activeClassName="active">
+            <NavLink
+              to={"/destinations"}
+              style={isMobileMenuOpen ? {} : navbarLinkStyle}
+              activeClassName="active"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Destination
             </NavLink>
-            <NavLink to={'/tours'} style={isMobileMenuOpen ? {} : navbarLinkStyle} activeClassName="active">
+            <NavLink
+              to={"/tours"}
+              style={isMobileMenuOpen ? {} : navbarLinkStyle}
+              activeClassName="active"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Tour
             </NavLink>
-            <NavLink to={'/contact'} style={isMobileMenuOpen ? {} : navbarLinkStyle} activeClassName="active">
+            <NavLink
+              to={"/contact"}
+              style={isMobileMenuOpen ? {} : navbarLinkStyle}
+              activeClassName="active"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Contact Us
             </NavLink>
           </div>
         </div>
       </nav>
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
