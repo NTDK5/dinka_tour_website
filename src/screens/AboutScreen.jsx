@@ -3,6 +3,8 @@ import aboutImage from "../assets/image_1.jpg";
 import gallery1 from "../assets/gallery1.jpg";
 import gallery2 from "../assets/gallery2.jpg";
 import gallery3 from "../assets/gallerry3.jpg";
+import oldCar from "../assets/old car.jpg";
+import recentCar from "../assets/recent car.jpg";
 import {
   FaGem,
   FaGlobe,
@@ -73,6 +75,40 @@ const AboutScreen = () => {
           </div>
         </div>
       </div>
+
+      <h2 className="fleet_title">From Then to Now: Our Vehicles</h2>
+
+      <section className="fleet">
+        {/* First Car Sub-section */}
+        <div className="car first-car">
+          <h3>The First Car to Omo Valley</h3>
+          <img src={oldCar} alt="First Car" />
+          <p>
+            Our first vehicle was a rugged and reliable 4x4, perfectly suited
+            for the challenging terrains of the Omo Valley. This car, a symbol
+            of our humble beginnings, allowed us to embark on countless
+            adventures and explore remote areas, bringing travelers closer to
+            the heart of Ethiopia. Its resilience and durability made it an
+            integral part of our early expeditions, setting the foundation for
+            the many journeys that followed.
+          </p>
+        </div>
+
+        {/* Recent Car Sub-section */}
+        <div className="car recent-car">
+          <h3>Our Latest Addition</h3>
+          <img src={recentCar} alt="Recent Car" />
+          <p>
+            Our latest addition to the fleet is a state-of-the-art SUV, equipped
+            with modern amenities and advanced technology. Designed for both
+            comfort and performance, this vehicle ensures a smooth and enjoyable
+            ride through Ethiopia's diverse landscapes. With enhanced safety
+            features and luxurious interiors, it reflects our commitment to
+            providing an exceptional travel experience while exploring the rich
+            cultural heritage and natural beauty of Ethiopia.
+          </p>
+        </div>
+      </section>
       <div className="service_container">
         <div className="service_title">
           <h1>

@@ -19,9 +19,9 @@ const DestinationDetail = () => {
   return (
     <div className="destination_detail_container">
       <div className="destination_detail_content">
+        <h1>{details.destination}</h1>
         <img src={details.images} alt="" />
 
-        <h1>{details.destination}</h1>
         <p>{details.description}</p>
 
         <div className="tours_list">

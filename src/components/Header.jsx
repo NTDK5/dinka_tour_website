@@ -29,7 +29,7 @@ const Header = ({ isHome }) => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center", // To push the menu items to the right
-    zIndex: 10000,
+    zIndex: 100,
     backgroundColor: isHome
       ? scrollPosition > window.innerHeight
         ? "white"
@@ -136,6 +136,14 @@ const Header = ({ isHome }) => {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact Us
+            </NavLink>
+            <NavLink
+              to={"/gallery"}
+              style={isMobileMenuOpen ? {} : navbarLinkStyle}
+              activeClassName="active"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Gallery
             </NavLink>
           </div>
         </div>

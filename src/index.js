@@ -15,6 +15,7 @@ import ToursScreen from "./screens/ToursScreen";
 import Contact from "./screens/Contact";
 import DestinationDetail from "./screens/DestinationDetail";
 import ToursDetail from "./screens/ToursDetail";
+import Gallery from "./screens/GalleryScreen";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
       <Route path="/tour/:id" element={<ToursDetail />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/destination/:id" element={<DestinationDetail />} />
+      <Route path="/gallery" element={<Gallery />} />
     </Route>
   )
 );
